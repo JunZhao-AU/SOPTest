@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Bad Bank";
+}
+
+<h1>@ViewData["Title"] Test:</h1>
+
+<hr />
+<p>Read Iframe Cookie(SOP):</p>
+<iframe src="https://localhost:44349" id="badBankIframe">
+    <p>Your browser does not support iframes.</p>
+</iframe>
+<br />
+<button onclick="readIframeCookie('badBankIframe')">ReadCookie</button>
+
+<hr />
+<p>Get Bank Capital WebAPI(CORS):</p>
+<button onclick="getBankCapital('https://localhost:44349/home/getbankcapital')">Get Bank Capital</button>
+<p>Update User Name WebAPI(CORS):</p>
+<button onclick="updateUserName('https://localhost:44349/home/updateusername')">Update User Name</button>
+
+<hr />
+<p>Transfer Money(CSRF):</p>
+<form method="POST" action="https://localhost:44349/home/account">
+    <input type="text" id="amount" name="amount" /><br />
+    <button type="submit">Submit</button>
+</form>

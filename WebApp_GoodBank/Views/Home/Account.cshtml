@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Transfer Money";
+}
+
+<p>@ViewData["Title"]:</p>
+<form method="POST" action="/home/account">
+    @Html.AntiForgeryToken()
+    <input type="text" id="amount" name="amount" /><br />
+    <button type="submit">Submit</button>
+</form>
